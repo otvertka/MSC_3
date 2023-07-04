@@ -6,7 +6,6 @@ import { useState } from "react";
 
 function App() {
   const [userInput, setUserInput] = useState(null);
-
   const calculateHandler = (userInput) => {
     setUserInput(userInput);
   };

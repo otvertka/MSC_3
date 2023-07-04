@@ -21,7 +21,7 @@ const ResultsTable = (props) => {
         </tr>
       </thead>
       <tbody>
-        {props.data.map((yearData) => (
+        {props.data.map((yearData) => {
           <tr key={yearData.year}>
             <td>{yearData.year}</td>
             <td>{formatter.format(yearData.savingsEndOfYear)}</td>
@@ -39,8 +39,8 @@ const ResultsTable = (props) => {
                   yearData.yearlyContribution * yearData.year
               )}
             </td>
-          </tr>
-        ))}
+          </tr>;
+        })}
       </tbody>
     </table>
   );

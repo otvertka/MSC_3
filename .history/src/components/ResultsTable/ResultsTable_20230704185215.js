@@ -39,7 +39,7 @@ const ResultsTable = (props) => {
                   yearData.yearlyContribution * yearData.year
               )}
             </td>
-          </tr>
+          </tr>;
         ))}
       </tbody>
     </table>

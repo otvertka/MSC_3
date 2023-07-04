@@ -14,7 +14,7 @@ const UserInput = (props) => {
     setUserInput((prevInput) => {
       return {
         ...prevInput,
-        [input]: +value,
+        [input]: value,
       };
     });
   };
@@ -82,14 +82,10 @@ const UserInput = (props) => {
         </p>
       </div>
       <p className={classes.actions}>
-        <button
-          onClick={resetHandler}
-          type="reset"
-          className={classes.buttonAlt}
-        >
+        <button onClick={resetHandler} type="reset" className="buttonAlt">
           Reset
         </button>
-        <button type="submit" className={classes.button}>
+        <button type="submit" className="button">
           Calculate
         </button>
       </p>

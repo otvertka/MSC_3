@@ -6,7 +6,6 @@ import { useState } from "react";
 
 function App() {
   const [userInput, setUserInput] = useState(null);
-
   const calculateHandler = (userInput) => {
     setUserInput(userInput);
   };
@@ -36,9 +35,7 @@ function App() {
 
       <UserInput onCalculate={calculateHandler} />
 
-      {!userInput && (
-        <p style={{ textAlign: "center" }}>No investment calculated yet.</p>
-      )}
+      {!userInput && <p style={{textAlign = 'center'}}>No investment calculated yet.</p>}
       {userInput && (
         <ResultsTable
           data={yearlyData}

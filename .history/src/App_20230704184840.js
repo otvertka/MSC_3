@@ -39,12 +39,7 @@ function App() {
       {!userInput && (
         <p style={{ textAlign: "center" }}>No investment calculated yet.</p>
       )}
-      {userInput && (
-        <ResultsTable
-          data={yearlyData}
-          initialInvestment={userInput["current-savings"]}
-        />
-      )}
+      {userInput && <ResultsTable />}
     </div>
   );
 }

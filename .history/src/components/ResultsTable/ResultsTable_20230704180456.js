@@ -1,6 +1,3 @@
-import React from "react";
-import classes from "./ResultsTable.module.css";
-
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
@@ -10,7 +7,7 @@ const formatter = new Intl.NumberFormat("en-US", {
 
 const ResultsTable = (props) => {
   return (
-    <table className={classes.result}>
+    <table className="result">
       <thead>
         <tr>
           <th>Year</th>
@@ -21,7 +18,7 @@ const ResultsTable = (props) => {
         </tr>
       </thead>
       <tbody>
-        {props.data.map((yearData) => (
+        {props.data.map((yearData) => {
           <tr key={yearData.year}>
             <td>{yearData.year}</td>
             <td>{formatter.format(yearData.savingsEndOfYear)}</td>
@@ -39,8 +36,8 @@ const ResultsTable = (props) => {
                   yearData.yearlyContribution * yearData.year
               )}
             </td>
-          </tr>
-        ))}
+          </tr>;
+        })}
       </tbody>
     </table>
   );

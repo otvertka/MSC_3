@@ -6,7 +6,6 @@ import { useState } from "react";
 
 function App() {
   const [userInput, setUserInput] = useState(null);
-
   const calculateHandler = (userInput) => {
     setUserInput(userInput);
   };
@@ -23,8 +22,8 @@ function App() {
       currentSavings += yearlyInterest + yearlyContribution;
       yearlyData.push({
         year: i + 1,
-        yearlyInterest: yearlyInterest,
-        savingsEndOfYear: currentSavings,
+        yearlyInterest: { yearlyInterest },
+        savingsEndOfYear: { currentSavings },
         yearlyContribution: yearlyContribution,
       });
     }
@@ -36,17 +35,22 @@ function App() {
 
       <UserInput onCalculate={calculateHandler} />
 
-      {!userInput && (
-        <p style={{ textAlign: "center" }}>No investment calculated yet.</p>
-      )}
-      {userInput && (
-        <ResultsTable
-          data={yearlyData}
-          initialInvestment={userInput["current-savings"]}
-        />
-      )}
+      {/* Todo: Show below table conditionally (only once result data is available) */}
+      {/* Show fallback text if no data is available */}
+
+      <ResultsTable />
     </div>
   );
 }
 
 export default App;
+
+// const formatter = new Intl.NumberFormat('en-US', {
+//   style: 'currency',
+//   currency: 'USD',
+//   minimumFractionDigits: 2,
+//   maximumFractionDigits: 2,
+//   });
+
+//   // используйте следующим образом:
+//   formatter.format(yourValue);

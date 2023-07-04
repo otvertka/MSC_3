@@ -14,7 +14,7 @@ const UserInput = (props) => {
     setUserInput((prevInput) => {
       return {
         ...prevInput,
-        [input]: +value,
+        [input]: value,
       };
     });
   };
@@ -89,7 +89,7 @@ const UserInput = (props) => {
         >
           Reset
         </button>
-        <button type="submit" className={classes.button}>
+        <button type="submit" className="button">
           Calculate
         </button>
       </p>
